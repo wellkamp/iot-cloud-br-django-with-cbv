@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+
+{% block title %}Sensors{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h1 style="text-align:center;">Últimos dez valores do sensor escolhido.</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container col-md-12">
+        <div class="row"></div>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Usuario</th>
+                  <th scope="col">Temperatura</th>
+                  <th scope="col">Umidade</th>
+                  <th scope="col">Data</th>
+                  <th scope="col">Hora</th>
+                    <th scope="col">Ações</th>
+                </tr>
+              </thead>
+                {% if sensors %}
+              <tbody>
+                {% for sensor in sensors %}
+                <tr>
+                  <td>{{ user.username|title }}</td>
+                  <td>{{ sensor.temperature }}</td>
+                  <td>{{ sensor.humidity }}</td>
+                  <td>{{ sensor.last_date }}</td>
+                  <td>{{ sensor.last_hour }}</td>
+                    <td>
+                       <a class="btn btn-danger btn-sm" href="#"
+                        data-toggle="modal" data-target="#delete-record">Delete</a>
+                    </td>
+                </tr>
+                <!-- Modal -->
+                <div class="modal fade" id="delete-record" tabindex="-1"
+                     role="dialog" aria-labelledBy="fm-modal-grid" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6">
+                                            <p>Are you sure you want to delete </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <form action="{% url 'delete-record' sensor.id %}" method="POST">
+                                       {% csrf_token %}
+                                       <button class="btn">Delete</button>
+                                </form>
+                                <button class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+              </tbody>
+            </table>
+                {% else %}
+                {% endif %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6"><canvas id="temperature" height="300" width="500"></canvas></div>
+                <div class="col-md-6"><canvas id="humidity" height="300" width="500"></canvas></div>
+            </div>
+        </div>
+
+
+
+    </div>
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+    <script>
+    var ctx = $('#temperature');
+            var temperatures = JSON.parse('{{ temperature|safe }}');
+            var hours = JSON.parse('{{ last_hour|safe }}');
+            var myLineChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: hours,
+                    datasets: [{
+                        label: 'Temperatura x Hora',
+                        data: temperatures,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true,
+                                max: 100,
+                                min: 0,
+                            }
+                        }]
+                    }
+                }
+            });
+
+    var ctx = $('#humidity');
+            var humiditys = JSON.parse('{{ humidity|safe }}');
+            var hours = JSON.parse('{{ last_hour|safe }}');
+            var myLineChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: hours,
+                    datasets: [{
+                        label: 'Umidade x Hora',
+                        data: humiditys,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true,
+                                max: 100,
+                                min: 0,
+                            }
+                        }]
+                    }
+                }
+            });
+
+  </script>
+{% endblock %}
