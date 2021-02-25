@@ -93,12 +93,12 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': 'mysql.connector.django',
-       'NAME': 'iot-cloud-br-cbv-final',
-       'USER': 'wellkamp',
-       'PASSWORD': 'wellk4mp',
+       'NAME': 'data-base',
+       'USER': 'user',
+       'PASSWORD': 'senha',
        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
        'PORT': '3306',
-       'database': 'iot-cloud-br-cbv-final',
+       'database': 'data-base',
    }
 }
 
