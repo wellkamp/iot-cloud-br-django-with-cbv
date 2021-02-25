@@ -3,15 +3,29 @@
 {% block title %}IoT Cloud BR{% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading">
-                        <h1>Olá, bem vindo a página da web do sistema IoT Cloud BR</h1>
-                    </div>
+    <div class="container col-6 .col-sm-6 col-md-12 col-lg-12 border p-3">
+        <div class="row">
+            <div class="col">
+                {% if user.is_authenticated %}
+                    <h1 class="border text-center">Olá, {{ user.username|title }}. Bem vindo ao Site IoT Cloud Br</h1>
+                {% else %}
+                    <h1 class="border text-center">Bem vindo ao Site IoT Cloud Br.</h1>
+                {% endif %}
+                 <div class="border p-3">
+                    <h2>Tecnologias usadas neste site:</h2>
+                    <h3>Front-end: </h3>
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JAVASCRIPT</p>
+                    <h3>Back-end: </h3>
+                    <p>DJANGO</p>
+                    <p>PYTHON</p>
+                    <h3>Banco de dados: </h3>
+                    <p>MYSQL</p>
                 </div>
             </div>
+
         </div>
+
     </div>
 {% endblock %}

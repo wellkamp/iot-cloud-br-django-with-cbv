@@ -5,23 +5,30 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
-            <div class="container mt-4">
-                <div class="row">
-                    <div class="col-12">
-                        {% if user.profile %}
-                        <h2>Perfil de {{ user.profile.first_name }} {{ user.profile.last_name }}</h2>
+    <div class="container col-6 .col-sm-6 col-md-12 col-lg-12 border p-3">
+        <div class="row">
+            <div class="col">
+                <div class="border">
+                    {% if user.profile %}
+                    <h2 class="border p-3 text-center m-3">Perfil de {{ user.profile.first_name }} {{ user.profile.last_name }}</h2>
+
+                    <div class="border p-3 m-3">
+                        <p>Nome: {{ user.profile.first_name }}</p>
+                        <p>Sobrenome: {{ user.profile.last_name }}</p>
+                    </div>
+
+                    <div class="border p-3 m-3">
                         <form method="POST">
                             {% csrf_token %}
-                            <p>Nome: {{ user.profile.first_name }}</p>
-                            <p>Sobrenome: {{ user.profile.last_name }}</p>
                             <a href="{% url 'profile_update' user.profile.slug %}" type="button"
                               class="btn btn-danger btn-sm">Update</a>
                             {% else %}
                         </form>
-                        {% endif %}
                     </div>
+
+                    {% endif %}
                 </div>
             </div>
+        </div>
       </div>
 {% endblock %}

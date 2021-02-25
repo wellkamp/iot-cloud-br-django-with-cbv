@@ -3,80 +3,46 @@
 {% block title %}Sensors{% endblock %}
 
 {% block content %}
-    <div class="container-fluid border text-center">
-        <div class="container col-md-12">
-            <div class="row col-md-12">
-                <div class="col-md-12   ">
-                    <div class="section-heading">
-                        <h1>Olá, {{ user.username }}, escolha o sensor que você quer visualizar.</h1>
-                    </div>
-                </div>
+    <div class="container col-sm- col-md-12 col-lg-12 border p-5">
+        <div class="row text-center">
+            <div class="col border col-sm- col-md-12 col-lg-12 p-3 mb-4">
+                <h1 style="text-align:center">Olá, {{ user.username }}, escolha o sensor que você quer visualizar.</h1>
             </div>
         </div>
-    </div>
-
-    <div class='row cards'>
+        <div class='row'>
         {% if sensors  %}
         {% for sensor in sensors %}
-        <div class='col-md'>
-                <div class="card shadow-sm" style="width: 18rem;">
-                    <div class="card-header"> {{ sensor.sensor_name|title }} </div>
-                    <div class="card-body">
-                    <p class="card-text">Descrição: {{ sensor.id }}</p>
+            <div class="col-sm-4 col-md-3 col-lg-3">
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <div class="card-header text-center">{{ sensor.sensor_name|title }}</div>
+                  <div class="card-body">
                     <p class="card-text">Criado em: {{ sensor.created_at }}</p>
-                      <a href="{% url 'sensors-table' sensor.slug %}" type="button"
-                      class="btn btn-primary btn-sm">Medições</a>
-                        <a class="btn btn-danger btn-sm" href="#"
-                        data-toggle="modal" data-target="#delete-sensor">Delete</a>
-                    </div>
-                </div>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="delete-sensor" tabindex="-1"
-             role="dialog" aria-labelledBy="fm-modal-grid" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button class="close" data-dismiss="modal" aria-label="Cerrar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-12 col-sm-6">
-                                    <p>Are you sure you want to delete </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <form action="{% url 'delete-sensor' sensor.slug sensor.id %}" method="POST">
-                               {% csrf_token %}
-                               <button class="btn">Delete</button>
-                        </form>
-                        <button class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-                    </div>
+                  </div>
+                <div class="card-footer">
+                  <a href="{% url 'sensors-table' sensor.slug %}" type="button"
+                  class="btn btn-primary btn-sm">Medições</a>
+                    <a class="btn btn-danger btn-sm" href="#"
+                    data-toggle="modal" data-target="#delete-sensor">Delete</a>
                 </div>
             </div>
-        </div>
-        {% endfor %}
-        {% else %}
-        <h3>Não tem sensor</h3>
-        {% endif %}
-        <div class="container-fluid border text-center">
-            <div class="container col-md-12">
-                <div class="row col-md-12">
-                    <div class="col-md-12">
-                        <div class="section-heading">
-                            <span>Criar novo sensor?</span>
-                            <a href="" type="button"
-                                class="btn btn-primary btn-sm">Criar</a>
-                        </div>
-                    </div>
+            </div>
+
+            <!-- Modal -->
+            {% include 'sensor/modal_delete_sensor.html' %}
+            {% endfor %}
+            </div>
+            {% else %}
+            <h3>Não tem sensor</h3>
+            {% endif %}
+
+
+            <div class="row text-center">
+                <div class="col border m-4 p-4">
+                    <span>Criar novo sensor?</span>
+                        <a href="" type="button"
+                            class="btn btn-primary btn-sm">Criar</a>
                 </div>
             </div>
-        </div>
 
     </div>
 

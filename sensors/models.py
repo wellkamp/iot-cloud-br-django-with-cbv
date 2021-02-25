@@ -8,6 +8,7 @@ User = settings.AUTH_USER_MODEL
 class Sensor(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     sensor_name = models.CharField(max_length=50, unique=True)
+    description = models.CharField(max_length=50, default='')
     slug = AutoSlugField(populate_from='sensor_name', unique=True, always_update=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

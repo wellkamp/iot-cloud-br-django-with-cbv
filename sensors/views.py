@@ -22,7 +22,7 @@ class SensorDetailView(LoginRequiredMixin, DetailView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         sensor = get_object_or_404(Sensor, slug=self.kwargs['slug'])
-        sensors = SensorValue.objects.all().filter(user_sensor_id=sensor.id).order_by('-last_date')[:10]
+        sensors = SensorValue.objects.all().filter(user_sensor_id=sensor.id).order_by('-last_date')[:7]
         temperature = [obj.temperature for obj in sensors]
         humidity = [obj.humidity for obj in sensors]
         last_hour = [obj.last_hour.strftime("%H:%M:%S") for obj in sensors]
