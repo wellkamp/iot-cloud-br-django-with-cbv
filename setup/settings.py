@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+'''
 DATABASES = {
    'default': {
        'ENGINE': 'mysql.connector.django',
@@ -100,6 +100,14 @@ DATABASES = {
        'PORT': '3306',
        'database': 'data-base',
    }
+}
+'''
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'iot-cloud-br',
+    }
 }
 
 
