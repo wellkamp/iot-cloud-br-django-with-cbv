@@ -1,7 +1,7 @@
 <h1> Sistema web para o projeto iot cloud br </h1> 
 <h2> Continuação do projeto de sistemas embarcados </h2>
-<p>Este projeto é uma continuação do projeto https://github.com/wellkamp/iot_cloud_br. 
-A diferença é que toda parte funcional de back-end está sendo feita através do framework django.</p>
+<p>Este projeto é semelhante ao projeto: https://github.com/wellkamp/iot_cloud_br. 
+A diferença é a implementação do framework Django para criação da estrutura do projeto.</p>
 
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
@@ -69,6 +69,10 @@ através de um embarcado que no caso desse projeto é uma esp32.</p>
 <li>[ ] Enviar as mensagens por MQTT</li>
 </ul>
 </li>
+
+<li>[ ] Implementar um bot no telegram para interagir com o sistema.
+</li>
+
 </ul>
 
 <h2>Pré-requisitos</h2>
