@@ -90,27 +90,27 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-
+'''
 DATABASES = {
    'default': {
        'ENGINE': 'mysql.connector.django',
-       'NAME': 'iot-cloud-br-cbv-final',
-       'USER': 'wellkamp',
-       'PASSWORD': 'wellk4mp',
+       'NAME': 'db',
+       'USER': 'user',
+       'PASSWORD': 'pass',
        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
        'PORT': '3306',
-       'database': 'iot-cloud-br-cbv-final',
+       'database': 'db',
    }
 }
-
 '''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'iot-cloud-br',
     }
 }
-'''
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
