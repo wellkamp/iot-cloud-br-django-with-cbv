@@ -151,7 +151,8 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'sensors/static/sensors')
+    os.path.join(BASE_DIR, 'sensors/static/sensors'),
+    os.path.join(BASE_DIR, 'setup/static/'),
 ]
 AUTH_USER_MODEL = 'users.User'
 
