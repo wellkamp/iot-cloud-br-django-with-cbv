@@ -75,7 +75,7 @@ através de um embarcado que no caso desse projeto é uma esp32.</p>
 
 </ul>
 
-<h2>Pré-requisitos</h2>
+<h2 id='prerequisitos'>Pré-requisitos</h2>
 <p> Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 <a href="www.github.com">Git,</a> <a href="https://www.python.org/">Python</a>.
 </p>
