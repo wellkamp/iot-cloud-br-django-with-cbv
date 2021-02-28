@@ -13,7 +13,7 @@ A diferença é a implementação do framework Django para criação da estrutur
 </p>
 
 <h2>Objetivo</h2>
-<p>Este projeto tem como objetivo principal de auxiliar os estudos do autor</p>
+<p>Este projeto tem como objetivo principal de auxiliar estudos do autor</p>
 <h3>Objetivos especificos</h3>
 <p>Os objetivos especificos deste projeto é implementar tecnologias de front-end e back-end para criar 
 uma página que possa demonstrar registros de valores de um sensor DHT11 enviados para o banco de dados
