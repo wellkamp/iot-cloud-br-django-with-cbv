@@ -89,28 +89,28 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-'''
+
+
 DATABASES = {
    'default': {
        'ENGINE': 'mysql.connector.django',
-       'NAME': 'data-base',
-       'USER': 'user',
-       'PASSWORD': 'senha',
+       'NAME': 'iot-cloud-br-cbv-final',
+       'USER': 'wellkamp',
+       'PASSWORD': 'wellk4mp',
        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
        'PORT': '3306',
-       'database': 'data-base',
+       'database': 'iot-cloud-br-cbv-final',
    }
 }
-'''
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'iot-cloud-br',
     }
 }
-
-
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -160,6 +160,7 @@ LOGIN_REDIRECT_URL = '/'
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 # bootstrap
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
