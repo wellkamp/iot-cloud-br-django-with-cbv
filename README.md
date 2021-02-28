@@ -51,7 +51,7 @@ através de um embarcado que no caso desse projeto é uma esp32.</p>
 <li>[x] Implementar os Templates.
 <ul>
 <li>[x] Construir os templates básicos.</li>
-<li>[x] Utilizar o bootstrap para estilizar os tempaltes.</li>
+<li>[x] Utilizar o bootstrap para estilizar os templates.</li>
 <li>[ ] Avançar na construção de design dos templates.</li>
 <li>[ ] Responsividade.</li>
 </ul>
