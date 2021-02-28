@@ -5,7 +5,7 @@ A diferença é a implementação do framework Django para criação da estrutur
 
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
- <a href="#roadmapefeatures">Roadmap e Features</a> • 
+ <a href="#roadmap">Roadmap e Features</a> • 
  <a href="#prerequisitos">Pré-requisitos</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#autor">Autor</a> • 
@@ -19,7 +19,7 @@ A diferença é a implementação do framework Django para criação da estrutur
 uma página que possa demonstrar registros de valores de um sensor DHT11 enviados para o banco de dados
 através de um embarcado que no caso desse projeto é uma esp32.</p>
 
-<h2 id='#roadmap'>Roadmap e Features</h2>
+<h2 id='roadmap'>Roadmap e Features</h2>
 <ul>
 <li>[x] Criar um app dos usuarios no Django
 <ul>
