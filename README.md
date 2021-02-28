@@ -6,8 +6,8 @@ A diferença é a implementação do framework Django para criação da estrutur
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
  <a href="#roadmap">Roadmap e Features</a> • 
- <a href="#tecnologias">Pré-requisitos</a> • 
- <a href="#contribuicao">Tecnologias</a> • 
+ <a href="#prerequisitos">Pré-requisitos</a> • 
+ <a href="#tecnologias">Tecnologias</a> • 
  <a href="#licenc-a">Autor</a> • 
  <a href="#autor">Licença</a>
 </p>
