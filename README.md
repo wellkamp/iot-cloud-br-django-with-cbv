@@ -1,4 +1,4 @@
-<h1> Projeto iot cloud br com Django Class Based Views </h1> 
+<h1> Projeto Iot Cloud BR com Django Class Based Views </h1> 
 <h2> Continuação do projeto de sistemas embarcados </h2>
 <p>Este projeto é semelhante ao projeto: https://github.com/wellkamp/iot_cloud_br. 
 A diferença é a implementação do framework Django para criação da estrutura do projeto.</p>
