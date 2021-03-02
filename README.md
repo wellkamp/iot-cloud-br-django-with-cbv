@@ -4,6 +4,7 @@
 A diferença é a implementação do framework Django para criação da estrutura do projeto.</p>
 
 <p align="center">
+ <a href="#status">Status do projeto</a> •
  <a href="#objetivo">Objetivo</a> •
  <a href="#roadmap">Roadmap e Features</a> • 
  <a href="#prerequisitos">Pré-requisitos</a> • 
@@ -11,6 +12,9 @@ A diferença é a implementação do framework Django para criação da estrutur
  <a href="#autor">Autor</a> • 
  <a href="#autor">Licença</a>
 </p>
+
+<h2 id='status'>Status do projeto</h2>
+<p>Em construção</p>
 
 <h2>Objetivo</h2>
 <p>Este projeto tem como objetivo principal de auxiliar estudos do autor</p>
