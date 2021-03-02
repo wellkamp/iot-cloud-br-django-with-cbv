@@ -104,10 +104,18 @@ python manage.py migrate
 
 # Criar um super usuário no Django.
 python manage.py createsuperuser
+
+# Rodar o servidor
+python manage.py runserver
 ~~~
 
 <p>Atualmente a criação do sensor e população dos valores devem ser feitos pelo
-admin do Django através do super usuário.</p>
+admin do Django através do super usuário e para isso é necessario seguir os seguintes passos:</p>
+<ul>
+ <li>Digitar na url http://localhost:8000/admin/</li>
+ <li>Colocar o usuario e a senha criados no cmd</li>
+ <li>Popular os sensores e seus valores</li>
+</ul>
 
 <h2>Tecnologias</h2>
 <p>As seguintes Tecnologias foram usadas</p>
